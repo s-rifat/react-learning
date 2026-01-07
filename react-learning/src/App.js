@@ -4,7 +4,7 @@ import {Greet} from './components/Greet'
 import Welcome from './components/Welcome'
 import Hello from './components/Hello'
 import Message from './components/Message'
-import Counter from './components/Counter';
+// import Counter from './components/Counter';
 import FunctionClick from './components/FunctionClick';
 import EventBind from './components/EventBind';
 import ParentComponent from './components/ParentComponent';
@@ -14,13 +14,26 @@ import Stylesheet from './components/Stylesheet';
 import Inline from './components/Inline';
 import './appStyles.css'
 import styles from './appStyles.module.css'
+import LifecycleA from './components/LifecycleA'
+import Form from './components/Form'
+import ClickCounter from './adv/ClickCounter';
+import Counter from './adv/Counter';
+import ClickCounterTwo from './adv/ClickCounterTwo';
 
 function App() {
   return (
     <div className="App">
-      <h1 className='error'>Error</h1>
-      <h1 className={styles.success}>Success</h1>
-      <Inline></Inline>
+      <Counter
+        render={(count, incrementCount)=>
+          (<ClickCounterTwo count={count} incrementCount={incrementCount}></ClickCounterTwo>
+        )}
+      ></Counter>
+      {/* <ClickCounter name='Rifat'></ClickCounter> */}
+      {/* <Form></Form> */}
+      {/* <LifecycleA></LifecycleA> */}
+      {/* <h1 className='error'>Error</h1>
+      <h1 className={styles.success}>Success</h1> */}
+      {/* <Inline></Inline> */}
       {/* <Stylesheet primary={true}></Stylesheet> */}
       {/* <NameList></NameList> */}
       {/* <UserGreeting></UserGreeting> */}
