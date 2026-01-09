@@ -1,0 +1,57 @@
+@import "../variables/Variables";
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Base button class for extend
+.button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: $primary-color;
+  border: none;
+  cursor: pointer;
+  font-family: $font-stack;
+}
+
+// Secondary button inherits from .button
+.btn-secondary {
+  @extend .button;
+  background-color: $secondary-color;
+}
+
+// Nesting & Operators
+.navbar {
+  background-color: $primary-color;
+  padding: 10px + 5px; // 15px
+  color: white;
+
+  li {
+    display: inline-block;
+    margin-right: 20px / 2; // 10px
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+// Container using mixin
+.container {
+  @include flex-center;
+  flex-direction: column;
+  height: 100vh;
+  gap: 20px;
+}
+
+// Box with operators
+.box {
+  width: 100px * 2;  // 200px
+  height: 50px + 50px; // 100px
+  background-color: $secondary-color;
+  @include flex-center;
+}
